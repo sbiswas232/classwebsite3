@@ -15,6 +15,6 @@
       enabled: true
   - name: copy custom html
     copy:
-      src: /*.html
+      src: /var/lib/jenkins/workspace/production1/*
       dest: /var/www/html/
       
