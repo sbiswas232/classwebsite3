@@ -17,6 +17,7 @@
     archive:
       path: /var/lib/jenkins/workspace/production1/*
       dest: /var/lib/jenkins/workspace/production1/classwebsite3.tar
+      force_archive: true
   - name: Unarchive
     unarchive:
       src: /var/lib/jenkins/workspace/production1/classwebsite3.tar
