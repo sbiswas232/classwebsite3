@@ -15,6 +15,6 @@
       enabled: true
   - name: copy custom html
     copy:
-      src: ./*
+      src: /*.html
       dest: /var/www/html/
-      remote_src: yes
+      
