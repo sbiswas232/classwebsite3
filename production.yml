@@ -15,7 +15,7 @@
       enabled: true
   - name: copy custom html
     copy:
-      src: /var/lib/jenkins/workspace/production1/*
+      src: index.html
       dest: /var/www/html/
-      remote_src: yes
+      
       
