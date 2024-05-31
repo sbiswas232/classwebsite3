@@ -17,4 +17,5 @@
     copy:
       src: /var/lib/jenkins/workspace/production1/*
       dest: /var/www/html/
+      remote_src: yes
       
