@@ -15,7 +15,7 @@
       enabled: true
   - name: Copy
     copy:
-      src: /production1/
+      src: guard.html
       dest: /var/www/html/
       
       
