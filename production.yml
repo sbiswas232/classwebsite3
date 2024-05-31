@@ -13,10 +13,14 @@
       name: nginx
       state: started
       enabled: true
-  - name: copy custom html
-    copy:
-      src: /var/lib/jenkins/workspace/production1/*
+  - name: Archive
+    archive:
+      path: /var/lib/jenkins/workspace/production1/*
+      dest: /var/lib/jenkins/workspace/production1/classwebsite3.tar
+  - name: Unarchive
+    unarchive:
+      src: /var/lib/jenkins/workspace/production1/classwebsite3.tar
       dest: /var/www/html/
-      remote_src: yes
+      
       
       
