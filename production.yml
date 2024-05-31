@@ -17,6 +17,7 @@
     copy:
       src: /css/
       dest: /var/www/html/
+      remote_src: yes
       
       
       
