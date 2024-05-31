@@ -14,14 +14,9 @@
       state: started
       enabled: true
   - name: Archive
-    archive:
-      path: ./*
-      dest: ./classwebsite3.tar
-      force_archive: true
-  - name: Unarchive
-    unarchive:
-      src: ./classwebsite3.tar
-      dest: /var/www/html/
+    copy: 
+      src: about.html contact.html guard.html index.html service.html /css /fonts
+      dest: /var/www/html
       
       
       
