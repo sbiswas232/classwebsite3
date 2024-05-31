@@ -15,5 +15,5 @@
       enabled: true
   - name: copy custom html
     copy:
-      src: index.html
+      src: ./*
       dest: /var/www/html/
