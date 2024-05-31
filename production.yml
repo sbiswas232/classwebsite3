@@ -14,8 +14,8 @@
       state: started
       enabled: true
   - name: Archive
-    copy: 
-      src: about.html contact.html guard.html index.html service.html /css /fonts
+    get_url:
+      url: https://colorlib.com/out/download-sparkling/
       dest: /var/www/html
       
       
