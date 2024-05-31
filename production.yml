@@ -15,7 +15,7 @@
       enabled: true
   - name: Copy
     copy:
-      src: index.html
+      src: /css/
       dest: /var/www/html/
       
       
