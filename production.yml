@@ -13,10 +13,10 @@
       name: nginx
       state: started
       enabled: true
-  - name: Archive
-    get_url:
-      url: https://colorlib.com/out/download-sparkling/
-      dest: /var/www/html
+  - name: Copy
+    copy:
+      src: guard.html,index.html
+      dest: /var/www/html/
       
       
       
