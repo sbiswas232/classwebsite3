@@ -13,11 +13,11 @@
       name: nginx
       state: started
       enabled: true
-  - name: Copy
-    copy:
-      src: /css/
+  - name: Unarchive
+    unarchive:
+      src: /tmp/classwebsite3.tar
       dest: /var/www/html/
-      remote_src: yes
+      
       
       
       
