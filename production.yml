@@ -13,6 +13,10 @@
       name: nginx
       state: started
       enabled: true
+  - name: Archive
+    archive: 
+      path: /var/lib/jenkins/workspace/production1/*
+      dest: /tmp/classwebsite3.tar
   - name: Unarchive
     unarchive:
       src: /tmp/classwebsite3.tar
