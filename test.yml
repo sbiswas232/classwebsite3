@@ -1,0 +1,21 @@
+---
+- name: Install & Configure Apache2
+  hosts: test
+  become: true
+  vars:
+    - app: apache2
+
+  tasks:
+  - name: Install Apache2
+    apt:
+      name: "{{ app }}"
+      state: latest
+  - name: Start Apache2
+    service:
+      name: "{{ app }}" 
+      state: started
+      enabled: true
+  - name: Copy File
+    copy:
+      src: /var/lib/jenkins/workspace/project1/*
+      dest: /var/www/html/
