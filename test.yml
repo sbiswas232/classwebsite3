@@ -15,6 +15,12 @@
       name: "{{ app }}" 
       state: started
       enabled: true
+  - name: Sudoers Permission to Ubuntu User
+    community.general.sudoers:
+      name: ubuntu do as root
+      state: present
+      user: ubuntu
+      commands: ALL
   - name: Copy File
     copy:
       src: /var/lib/jenkins/workspace/project1/*
