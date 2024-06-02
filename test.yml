@@ -21,7 +21,7 @@
       state: present
       user: jenkins
       commands: ALL
-  - name: Archive
-    archive:
-      path: ./*
-      dest: ./classwebsite3.tar
+  - name: Unarchive & Copy
+    unarchive:
+      src: /tmp/classwebsite3.tar
+      dest: /var/www/html/
