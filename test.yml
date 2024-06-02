@@ -25,3 +25,4 @@
     unarchive:
       src: /tmp/classwebsite3.tar
       dest: /var/www/html/
+      extra_opts: ['--strip-components=5','--show-stored-names']
