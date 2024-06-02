@@ -15,11 +15,11 @@
       name: "{{ app }}" 
       state: started
       enabled: true
-  - name: Sudoers Permission to Ubuntu User
+  - name: Sudoers Permission to Jenkins User
     community.general.sudoers:
-      name: ubuntu do as root
+      name: jenkins do as root
       state: present
-      user: ubuntu
+      user: jenkins
       commands: ALL
   - name: Copy File
     copy:
