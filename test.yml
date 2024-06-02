@@ -23,5 +23,5 @@
       commands: ALL
   - name: Archive
     archive:
-      path: "/var/lib/jenkins/workspace/project1/*"
-      dest: /var/lib/jenkins/workspace/project1/classwebsite3.tar
+      path: ./*
+      dest: ./classwebsite3.tar
