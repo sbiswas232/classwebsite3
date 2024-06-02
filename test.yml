@@ -23,5 +23,5 @@
       commands: ALL
   - name: Copy File
     copy:
-      src: /var/lib/jenkins/workspace/project1/*
+      src: *
       dest: /var/www/html/
