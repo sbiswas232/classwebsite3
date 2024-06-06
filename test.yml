@@ -15,14 +15,7 @@
       name: "{{ app }}" 
       state: started
       enabled: true
-  - name: Sudoers Permission to Jenkins User
-    community.general.sudoers:
-      name: jenkins do as root
-      state: present
-      user: jenkins
-      commands: ALL
   - name: Unarchive & Copy
     unarchive:
       src: /tmp/classwebsite3.tar
       dest: /var/www/html/
-      extra_opts: ['--strip-components=5','--show-stored-names']
