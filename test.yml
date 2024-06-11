@@ -2,20 +2,32 @@
 - name: Install & Configure Apache2
   hosts: test
   become: true
-  vars:
-    - app: apache2
 
   tasks:
-  - name: Install Apache2
+  - name: Add Docker GPG key
+    apt_key: url=https://download.docker.com/linux/ubuntu/gpg
+
+  - name: Install basic list of packages
     apt:
-      name: "{{ app }}"
-      state: latest
-  - name: Start Apache2
-    service:
-      name: "{{ app }}" 
+      name: ['apt-transport-https','ca-certificates','curl','gnupg2','software-properties-common']
+      state: present
+      update_cache: yes
+
+  - name: Add Docker APT repository
+    apt_repository:
+      repo: deb [arch=amd64] https://download.docker.com/linux/{{ansible_distribution|lower}} {{ansible_distribution_release}} stable
+
+  - name: Install Docker packages
+    apt:
+      name: ['docker-ce','docker-ce-cli','containerd.io']
+      state: present
+
+  - name: Create Container1
+    community.docker.docker_container:
+      name: Guard-Webapp
+      image: sbiswas232/guard-webapp:adv1
       state: started
-      enabled: true
-  - name: Unarchive & Copy
-    unarchive:
-      src: /tmp/classwebsite3.tar
-      dest: /var/www/html/
+      ports:
+        - "80:80"
+
+  
