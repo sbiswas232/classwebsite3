@@ -1,0 +1,27 @@
+name: General ci/cd
+
+on: 
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-24.04
+
+    steps:
+      - uses: action/checkout@v4
+      - name: Create a dummy file
+        run: |
+          mkdir -p github-directory
+          echo "Hello, this file is a created by github action & save it to artifact!" > github-directory/github-file.txt
+
+      - name: Upload the file as an artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: github-generated-artifact
+          path: github-directory/github-file.txt
+          retaintion-days: 1
+ 
+    
