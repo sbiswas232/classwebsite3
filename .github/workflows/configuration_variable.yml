@@ -1,0 +1,23 @@
+name: Different variable using in Github-Action
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request: 
+    branches: [ "main" ]
+
+env: 
+  cloud: azure_cloud
+
+jobs:
+  build:
+    runs-on: ubuntu-24.04
+    env:
+      greeting: Hello
+    steps:
+    - name: Which cloud User used
+      run: echo "$greetings $name used always $cloud"
+      env:
+        name: user1
+  
+  
