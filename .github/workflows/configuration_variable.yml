@@ -16,7 +16,7 @@ jobs:
       greeting: Hello
     steps:
     - name: Which cloud User used
-      run: echo "$greetings $name used always $cloud"
+      run: echo "$greeting $name used always $cloud"
       env:
         name: user1
   
