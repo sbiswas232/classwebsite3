@@ -18,6 +18,6 @@ jobs:
     - name: Which cloud User used
       run: echo "$greeting $name used always $cloud ${{ vars.api_version }}!"
       env:
-        name: user1
+        name: Souvik
   
   
