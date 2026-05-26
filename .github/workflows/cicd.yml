@@ -20,7 +20,7 @@ jobs:
           mkdir -p github-directory
           echo "Hello, this file is created by $user on $date & save it to artifact!" > github-directory/github-file.txt
         env:
-          date: 27may26
+          date: 27May26
 
       - name: Upload the file as an artifact
         uses: actions/upload-artifact@v4
