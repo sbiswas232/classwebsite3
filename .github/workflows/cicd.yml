@@ -5,7 +5,8 @@ on:
     branches: [ "main" ]
   pull_request:
     branches: [ "main" ]
-
+env:
+  user: Souvik
 jobs:
   build:
     runs-on: ubuntu-24.04
@@ -13,11 +14,14 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
+
+        env:
+          date: 27may26
         
       - name: Create a dummy file
         run: |
           mkdir -p github-directory
-          echo "Hello, this file is a created by github action & save it to artifact!" > github-directory/github-file.txt
+          echo "Hello, this file is a created by $user on $date & save it to artifact!" > github-directory/github-file.txt
 
       - name: Upload the file as an artifact
         uses: actions/upload-artifact@v4
