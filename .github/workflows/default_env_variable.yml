@@ -1,0 +1,17 @@
+name: ci/cd pipeline for default_env_variable
+
+on: 
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-24.04
+    steps:
+      - name: default_env_variable
+        run: |
+          echo "GitHub Repository Nmae: ${{ github.repository }}"
+          echo "Github Workflow Name: ${{ github.workflow }}"
+          echo "Github Owner Nmae: ${{ github.repository_owner }}"
